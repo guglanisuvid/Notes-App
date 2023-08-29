@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Linking Stylesheet -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Title -->
+    <title>Notes App</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header">
+        <!-- Made By Suvid -->
+        <div id="made-by-suvid">
+          <p>Made with <i class="bi bi-heart-fill"></i> by Suvid</p>
+        </div>
+
+        <!-- Time -->
+        <div id="time">
+          <span id="hours"></span>
+          <span>:</span>
+          <span id="minutes"></span>
+          <span>:</span>
+          <span id="seconds"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <section>
+      <div id="section-content">
+        <!-- Notes Section -->
+        <div id="notes">
+          <!-- Notes Section Heading -->
+          <div id="notesHead">
+            <h1><i class="bi bi-pen-fill"></i> Notes</h1>
+            <span>
+              Click on save <i class="bi bi-save-fill"></i> icon to save the
+              note
+              <br />
+              Click on delete <i class="bi bi-trash-fill"></i> icon to delete
+              the note
+            </span>
+          </div>
+
+          <!-- Notes Content Area -->
+          <div id="notes-content"></div>
+
+          <!-- Create New Note Button -->
+          <button id="notes-btn">
+            <i class="bi bi-plus-circle-fill"></i>
+          </button>
+        </div>
+
+        <!-- Weather Section -->
+        <div id="weather">
+          <form id="form">
+            <input
+              type="text"
+              id="search"
+              placeholder="Get Weather Info"
+              autocomplete="on"
+              spellcheck="false"
+            />
+          </form>
+          <div id="weatherDetails"></div>
+        </div>
+
+        <!-- Sun Section -->
+        <div id="sun"></div>
+
+        <!-- Quote Section -->
+        <div id="quote">
+          <div id="quoteHead">
+            <h1><i class="bi bi-stars"></i> Vibrant Verses</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Copyright <i class="bi bi-c-circle-fill"></i> 2023. All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/time.js"></script>
+    <script src="./js/notes.js"></script>
+    <script src="./js/weather-sun.js"></script>
+    <script src="./js/quote.js"></script>
+  </body>
+</html>

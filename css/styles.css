@@ -1,0 +1,524 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --max-width: 2000px;
+    --clr-black: #0A0F0D;
+    --clr-white: #F1F2F6;
+    --clr-blue:#3777FF;
+    --clr-pink:#D90368;
+    --clr-yellow: #F9C22E;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    background: var(--clr-black);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(0.24em);
+    max-width: var(--max-width);
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    margin-inline: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.04rem);
+    color: var(--clr-white);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+}
+
+p {
+    line-height: 1.6;
+    letter-spacing: 0.08em;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    --height: 3.2rem;
+    min-height: var(--height);
+    background: url(../svg/ShinyOverlay.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--clr-blue);
+    box-shadow: 0 0 0.4em var(--clr-black);
+}
+
+.header {
+    width: 80%;
+    height: var(--height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2.4em;
+    margin: auto;
+}
+
+#made-by-suvid p {
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#time {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 2.4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#time span::after {
+    display: block;
+    font-size: 80%;
+}
+
+#time #hours::after {
+    content: 'Hours';
+}
+
+#time #minutes::after {
+    content: 'Minutes';
+}
+
+#time #seconds::after {
+    content: 'Seconds';
+}
+
+section {
+    width: 100%;
+    flex: 1;
+    padding: 4rem 0;
+    background: url(../svg/ContourLine.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: scroll;
+    text-align: center;
+}
+
+section::-webkit-scrollbar {
+    display: none;
+}
+
+section #section-content {
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8em;
+    margin: auto;
+}
+
+section #section-content::-webkit-scrollbar {
+    display: none;
+}
+
+#sun, #weather, #notes, #quote {
+    padding: 1.24em 0.4em;
+    border-radius: 1.24em;
+}
+
+#notes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: span 3;
+    grid-row: span 2;
+    background: url(../svg/Wave.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 0.4em var(--clr-white);
+    padding-inline: 1.24em !important;
+}
+
+#notesHead span {
+    font-size: 80%;
+    color: var(--clr-white);
+    opacity: 0.8;
+}
+
+#notes #notes-content {
+    flex: 1;
+    margin: 1.24em 0;
+    overflow-y: scroll;
+}
+
+#notes #notes-content::-webkit-scrollbar {
+    display: none;
+}
+
+#notes #notes-content .note {
+    width: 100%;
+    height: 40%;
+    position: relative;
+    margin: 0.56em auto;
+}
+
+#notes #notes-content .note i {
+    position: absolute;
+    font-size: 120%;
+    z-index: 1;
+    color: var(--clr-pink);
+}
+
+#notes #notes-content .note .bi-trash-fill {
+    transform: translate(-160%, -160%);
+    top: 100%;
+    left: 100%;
+}
+
+#notes #notes-content .note .bi-save-fill {
+    transform: translate(60%, -60%);
+    bottom: 0%;
+    left: 0%; 
+}
+
+#notes #notes-content .note .note-body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: var(--clr-white);
+    border-radius: 0.4em;
+    color: var(--clr-blue);
+    padding: 1.24em 2.48em;
+    text-align: left;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    overflow-y: scroll;
+}
+
+#notes #notes-content .note .note-body::-webkit-scrollbar {
+    display: none;
+}
+
+#notes #notes-btn {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-weight: 600;
+    color: var(--clr-white);
+    text-align: right;
+    z-index: 10;
+}
+
+#notes #notes-btn i {
+    font-size: 280%;
+}
+
+#weather {
+    grid-column: span 2;
+    box-shadow: 0 0 0.4em var(--clr-white);
+    overflow-y: scroll;
+}
+
+#weather::-webkit-scrollbar {
+    display: none;
+}
+
+#weather form input {
+    width: 80%;
+    padding: 0.4rem;
+    font-family: inherit;
+    border: none;
+    border-bottom: 2px solid var(--clr-white);
+    outline: none;
+    color: var(--clr-white);
+    background: transparent;
+    font-weight: 600;
+}
+
+#weatherDetails {
+    text-align: center;
+    color: var(--clr-white);
+    margin-top: 0.8em;
+}
+
+#weatherDetails #name {
+    text-transform: uppercase;
+}
+
+#name-and-temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#name-and-temp, #humidity, #windSpeed {
+    padding: 0.24em 0;
+    font-weight: 500;
+}
+
+#weather form input::placeholder {
+    color: var(--clr-white);
+    font-weight: 600;
+}
+
+#sun {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--clr-white);
+    font-weight: 500;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 0.4em var(--clr-white);
+}
+
+#sun::-webkit-scrollbar {
+    display: none;
+}
+
+#sun .sun-content-head, #sun .sun-content-data  {
+    margin: 0.4em;
+}
+
+#humidityHead, #windSpeedHead, #sun .sun-content-head {
+    font-weight: 600;
+}
+
+#quote {
+    height: 100%;
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    background: url(../svg/Sprinkle.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    color: var(--clr-black);
+    box-shadow: 0 0 0.4em var(--clr-white);
+}
+
+#quote::-webkit-scrollbar {
+    display: none;
+}
+
+#quote #quoteHead, #quote #author {
+    margin-inline: 0.4em;
+}
+
+#quote #quoteContent {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-weight: 500;
+    flex: 1;
+    margin: 0.4em;
+}
+
+#quote #quoteContent p::before, #quote #quoteContent p::after {
+    content: '"';
+}
+
+#quote #author {
+    text-align: right;
+    font-weight: 500;
+}
+
+#quote #author p::before {
+    content: '- ';
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    --height: 3.2rem;
+    min-height: var(--height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80%;
+    background: url(../svg/ShinyOverlay.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--clr-blue);
+    box-shadow: 0 0 0.4em var(--clr-black);
+}
+
+@media screen and (max-width: 1400px) {
+    section #section-content {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    #weather {
+        grid-column: span 3;
+    }
+
+    #sun {
+        grid-column: span 2;
+    }
+
+    #quote {
+        grid-column: span 5;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    section #section-content {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    #notes {
+        order: 4;
+        grid-column: span 7;
+        grid-row: span 2;
+    }
+
+    #notes #notes-content .note {
+        height: 80%;
+    }
+
+    #weather {
+        grid-column: span 3;
+    }
+
+    #sun, #quote {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .header {
+        padding-inline: 0.8em;
+    }
+
+    #time {
+        gap: 1.2em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        height: 120vh;
+    }
+
+    .header {
+        padding-inline: 0;
+    }
+
+    #made-by-suvid {
+        font-size: 80%;
+    }
+
+    section #section-content {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    #notes {
+        grid-column: span 5;
+    }
+
+    #notes #notes-content .note {
+        height: 64%;
+    }
+
+    #weather {
+        grid-column: span 3;
+    }
+
+    #sun {
+        grid-column: span 2;
+    }
+
+    #quote {
+        grid-column: span 5;
+        order: 4;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    body {
+        height: 160vh;
+    }
+
+    #made-by-suvid {
+        display: none;
+    }
+
+    #time {
+        margin: auto;
+    }
+
+    section #section-content {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    #notes {
+        grid-column: span 1;
+        grid-row: span 3;
+    }
+
+    #notes #notes-content .note {
+        height: 40%;
+    }
+
+    #weather {
+        grid-column: span 1;
+    }
+
+    #sun {
+        grid-column: span 1;
+    }
+
+    #quote {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #time {
+        font-size: 88%;
+        gap: 0.8em;
+    }
+
+    #weather form input::placeholder, #weather #weatherDetails #name, footer {
+        font-size: 72%;
+    }
+
+    #weather form input {
+        width: 96%;
+    }
+
+    #weather form input, #weather form input::placeholder {
+        font-weight: 500;
+    }
+
+    footer p {
+        letter-spacing: 0.064em;
+    }
+}
